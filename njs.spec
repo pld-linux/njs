@@ -52,7 +52,7 @@ Statyczna wersja biblioteki NGS JavaScript.
 %patch -p1
 
 %build
-libtoolize --copy --force
+%{__libtoolize}
 aclocal -I am
 %{__autoconf}
 %{__automake}
