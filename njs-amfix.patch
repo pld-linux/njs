@@ -1,0 +1,70 @@
+diff -Nur js-0.2.5.orig/configure.in js-0.2.5/configure.in
+--- js-0.2.5.orig/configure.in	Fri Jan 15 08:39:51 1999
++++ js-0.2.5/configure.in	Sat May 18 00:01:39 2002
+@@ -17,7 +17,9 @@
+ fi
+ 
+ 
+-AM_PROG_INSTALL
++dnl Now we definitely need the cc.
++AC_PROG_CC
++AC_PROG_INSTALL
+ AC_PROG_RANLIB
+ 
+ AC_CANONICAL_HOST
+@@ -60,13 +60,11 @@
+ 
+ INTERPRETER_FEATURES="$INTERPRETER_FEATURES $RE_ENTRANT_SOURCE"
+ 
+-dnl Now we definitely need the cc.
+-AC_PROG_CC
+ 
+ 
+ AM_ENABLE_SHARED(no)
+ AM_ENABLE_STATIC(yes)
+-AM_PROG_LIBTOOL
++AC_PROG_LIBTOOL
+ 
+ AC_AIX
+ 
+@@ -91,7 +91,7 @@
+   AC_MSG_RESULT(yes)
+ ], [
+   AC_MSG_RESULT(no)
+-  AC_DEFINE(inline,)
++  AC_DEFINE(inline,,[if inline works])
+ ])
+ 
+ dnl Does the struct stat have st_blksize?
+@@ -171,7 +171,7 @@
+ 
+ with_curses_val=0
+ AC_ARG_WITH(curses,
+-[  --with-curses           build curses entension],
++[  --with-curses           build curses entension],[
+   if test "X$withval" = "Xyes"; then
+     echo "building curses extension"
+     with_curses_val=1
+@@ -189,7 +189,7 @@
+       ])
+     ])
+   fi
+-)
++])
+ if test "X$with_curses_val" = "X1"; then
+   AC_DEFINE(WITH_CURSES)
+   EXTENSIONS="$EXTENSIONS xcurses.lo"
+diff -Nur js-0.2.5.orig/src/Makefile.am js-0.2.5/src/Makefile.am
+--- js-0.2.5.orig/src/Makefile.am	Wed Nov 25 09:06:06 1998
++++ js-0.2.5/src/Makefile.am	Sat May 18 00:00:20 2002
+@@ -36,8 +36,8 @@
+ 		b_object.c b_string.c b_date.c b_dir.c b_file.c b_math.c \
+ 		b_regexp.c b_system.c b_vm.c
+ 
+-libjs_la_LIBADD = @INTERPRETER_FEATURES@ @EXTENSIONS@
+-libjs_la_DEPENDENCIES = $(libjs_la_LIBADD)
++libjs_la_LIBADD = @INTERPRETER_FEATURES@ @EXTENSIONS@ @EXTENSIONS_LIBS@ -lm
++libjs_la_DEPENDENCIES = @INTERPRETER_FEATURES@ @EXTENSIONS@
+ EXTRA_libjs_la_SOURCES = vmswt0.c r_std.c r_pthrs.c dl_open.c dl_dummy.c \
+ 	xjs.c xcurses.c xmd5.c md5c.c
+ 
