@@ -6,6 +6,7 @@ Release:	1
 License:	LGPL
 Group:		Development/Languages
 Source0:	http://people.ssh.fi/mtr/js/js-%{version}.tar.gz
+# Source0-md5:	b299c678e388a170eea09b6e12375152
 Patch0:		%{name}-amfix.patch
 URL:		http://people.ssh.fi/mtr/js/
 # also http://www.bbassett.net/njs/
