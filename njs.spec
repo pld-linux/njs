@@ -12,7 +12,7 @@ URL:		http://people.ssh.fi/mtr/js/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
-Obsoletes:	js
+Conflicts:	js
 Requires(post,postun):	/sbin/ldconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -36,11 +36,25 @@ mo¿na znale¼æ w przegl±darkach WWW i serwerach Netscape. Aby osi±gn±æ
 zamierzone cele, niezbêdne by³y pewne uproszczenia w porównaniu z
 implementacj± Netscape.
 
-%package static
-Summary:	Static NGS JavaScript library
-Summary(pl):	Statyczna biblioteka NGS Javascript
+%package devel
+Summary:	Header files for NGS JavaScript library
+Summary(pl):	Pliki nag³ówkowe biblioteki NGS JavaScript
 Group:		Development/Libraries
 Requires:	%{name} = %{version}
+Conflicts:	js-devel
+
+%description devel
+Header files for NGS JavaScript library.
+
+%description devel -l pl
+Pliki nag³ówkowe biblioteki NGS JavaScript.
+
+%package static
+Summary:	Static NGS JavaScript library
+Summary(pl):	Statyczna biblioteka NGS JavaScript
+Group:		Development/Libraries
+Requires:	%{name}-devel = %{version}
+Conflicts:	js-static
 
 %description static
 Static version of NGS JavaScript library.
@@ -66,7 +80,6 @@ rm -f missing
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
@@ -87,11 +100,14 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS NEWS README THANKS TODO
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
+%{_infodir}/js*.info*
+%{_mandir}/man1/*
+
+%files devel
+%defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/lib*.la
 %{_includedir}/*.h
-%{_infodir}/js*.info*
-%{_mandir}/man1/*
 
 %files static
 %defattr(644,root,root,755)
