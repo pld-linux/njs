@@ -54,8 +54,8 @@ Statyczna wersja biblioteki NGS JavaScript.
 %build
 libtoolize --copy --force
 aclocal -I am
-autoconf
-automake -a -c -f
+%{__autoconf}
+%{__automake}
 %configure \
 	--enable-shared \
 	--with-pthreads
