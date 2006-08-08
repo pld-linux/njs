@@ -65,7 +65,7 @@ Statyczna wersja biblioteki NGS JavaScript.
 
 %prep
 %setup -q -n js-%{version}
-%patch -p1
+%patch0 -p1
 
 %build
 rm -f missing
