@@ -13,8 +13,8 @@ URL:		http://people.ssh.fi/mtr/js/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
-Conflicts:	js
 Requires(post,postun):	/sbin/ldconfig
+Conflicts:	js
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -41,7 +41,7 @@ implementacj± Netscape.
 Summary:	Header files for NGS JavaScript library
 Summary(pl):	Pliki nag³ówkowe biblioteki NGS JavaScript
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 Conflicts:	js-devel
 
 %description devel
@@ -54,7 +54,7 @@ Pliki nag³ówkowe biblioteki NGS JavaScript.
 Summary:	Static NGS JavaScript library
 Summary(pl):	Statyczna biblioteka NGS JavaScript
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 Conflicts:	js-static
 
 %description static
