@@ -1,5 +1,5 @@
 Summary:	NGS JavaScript Interpreter
-Summary(pl):	Interpreter Javascriptu z NGS
+Summary(pl.UTF-8):   Interpreter Javascriptu z NGS
 Name:		njs
 Version:	0.2.5
 Release:	1
@@ -27,19 +27,19 @@ language, found from the Netscape's WWW browsers and servers. To
 achieve the following design goals, some shortcuts have been taken in
 the implementation, as compared to the Netscape's implementation.
 
-%description -l pl
-NGS JavaScript to wolnodostêpny interpreter jêzyka JavaScript.
-JavaScript jest interpretowanym jêzykiem podobnym do C, rozwijanym
+%description -l pl.UTF-8
+NGS JavaScript to wolnodostÄ™pny interpreter jÄ™zyka JavaScript.
+JavaScript jest interpretowanym jÄ™zykiem podobnym do C, rozwijanym
 przez Netscape.
 
-Ta implementacja nie jest w 100% zgodna z jêzykiem JavaScript jaki
-mo¿na znale¼æ w przegl±darkach WWW i serwerach Netscape. Aby osi±gn±æ
-zamierzone cele, niezbêdne by³y pewne uproszczenia w porównaniu z
-implementacj± Netscape.
+Ta implementacja nie jest w 100% zgodna z jÄ™zykiem JavaScript jaki
+moÅ¼na znaleÅºÄ‡ w przeglÄ…darkach WWW i serwerach Netscape. Aby osiÄ…gnÄ…Ä‡
+zamierzone cele, niezbÄ™dne byÅ‚y pewne uproszczenia w porÃ³wnaniu z
+implementacjÄ… Netscape.
 
 %package devel
 Summary:	Header files for NGS JavaScript library
-Summary(pl):	Pliki nag³ówkowe biblioteki NGS JavaScript
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe biblioteki NGS JavaScript
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Conflicts:	js-devel
@@ -47,12 +47,12 @@ Conflicts:	js-devel
 %description devel
 Header files for NGS JavaScript library.
 
-%description devel -l pl
-Pliki nag³ówkowe biblioteki NGS JavaScript.
+%description devel -l pl.UTF-8
+Pliki nagÅ‚Ã³wkowe biblioteki NGS JavaScript.
 
 %package static
 Summary:	Static NGS JavaScript library
-Summary(pl):	Statyczna biblioteka NGS JavaScript
+Summary(pl.UTF-8):   Statyczna biblioteka NGS JavaScript
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 Conflicts:	js-static
@@ -60,7 +60,7 @@ Conflicts:	js-static
 %description static
 Static version of NGS JavaScript library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna wersja biblioteki NGS JavaScript.
 
 %prep
