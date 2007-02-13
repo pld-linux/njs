@@ -1,5 +1,5 @@
 Summary:	NGS JavaScript Interpreter
-Summary(pl.UTF-8):   Interpreter Javascriptu z NGS
+Summary(pl.UTF-8):	Interpreter Javascriptu z NGS
 Name:		njs
 Version:	0.2.5
 Release:	1
@@ -39,7 +39,7 @@ implementacją Netscape.
 
 %package devel
 Summary:	Header files for NGS JavaScript library
-Summary(pl.UTF-8):   Pliki nagłówkowe biblioteki NGS JavaScript
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki NGS JavaScript
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Conflicts:	js-devel
@@ -52,7 +52,7 @@ Pliki nagłówkowe biblioteki NGS JavaScript.
 
 %package static
 Summary:	Static NGS JavaScript library
-Summary(pl.UTF-8):   Statyczna biblioteka NGS JavaScript
+Summary(pl.UTF-8):	Statyczna biblioteka NGS JavaScript
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 Conflicts:	js-static
